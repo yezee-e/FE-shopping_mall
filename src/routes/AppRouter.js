@@ -10,7 +10,7 @@ import PaymentPage from "../page/PaymentPage";
 import ProductAll from "../page/ProductAll";
 import ProductDetail from "../page/ProductDetail";
 import RegisterPage from "../page/RegisterPage";
-import PrivateRoute from "../Route/PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const AppRouter = () => {
   return (

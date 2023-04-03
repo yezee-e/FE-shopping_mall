@@ -1,7 +1,7 @@
 import * as types from "../constants/commonUI.constants";
 const initialState = {
   toastMessage: { message: "", status: "" },
-  isFullyLoaded: false,
+  isFullyLoaded: true, // 나중에 false로 바꾸기
 };
 
 function commonUiReducer(state = initialState, action) {
