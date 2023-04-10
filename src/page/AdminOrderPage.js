@@ -19,7 +19,6 @@ const AdminOrderPage = () => {
     page: query.get("page") || 1,
     ordernum: query.get("ordernum") || "",
   });
-  const error = useSelector((state) => state.order.error);
   const [open, setOpen] = useState(false);
   const totalPageNum = useSelector((state) => state.order.totalPageNum);
   const tableHeader = [
@@ -32,10 +31,6 @@ const AdminOrderPage = () => {
     "Total Price",
     "Status",
   ];
-
-  useEffect(() => {
-    dispatch(commonUiActions.showToastMessage(error, "error"));
-  }, [error]);
 
   useEffect(() => {
     dispatch(orderActions.getOrderList({ ...searchQuery }));
