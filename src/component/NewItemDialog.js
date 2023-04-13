@@ -18,9 +18,8 @@ const InitialFormData = {
   status: "active",
   price: 0,
 };
-const NewItemDialog = ({ mode }) => {
+const NewItemDialog = ({ mode, showDialog, setShowDialog }) => {
   const selectedProduct = useSelector((state) => state.product.selectedProduct);
-  const showItemDialog = useSelector((state) => state.product.showItemDialog);
   const { error } = useSelector((state) => state.product);
   const [formData, setFormData] = useState(
     mode === "new" ? { ...InitialFormData } : selectedProduct
@@ -87,19 +86,19 @@ const NewItemDialog = ({ mode }) => {
   };
 
   useEffect(() => {
-    if (showItemDialog) {
+    if (showDialog) {
       if (mode === "edit") {
         // 선택된 데이터값 불러오기 (재고 형태 객체에서 어레이로 바꾸기)
       } else {
         // 초기화된 값 불러오기
       }
     }
-  }, [showItemDialog]);
+  }, [showDialog]);
 
   //에러나면 토스트 메세지 보여주기
 
   return (
-    <Modal show={showItemDialog} onHide={handleClose}>
+    <Modal show={showDialog} onHide={handleClose}>
       <Modal.Header closeButton>
         {mode === "new" ? (
           <Modal.Title>Create New Product</Modal.Title>

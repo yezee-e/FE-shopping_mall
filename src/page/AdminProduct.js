@@ -14,7 +14,7 @@ const AdminProduct = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useSearchParams();
   const dispatch = useDispatch();
-
+  const [showDialog, setShowDialog] = useState(false);
   const [searchQuery, setSearchQuery] = useState({
     page: query.get("page") || 1,
     name: query.get("name") || "",
@@ -102,7 +102,11 @@ const AdminProduct = () => {
         />
       </Container>
 
-      <NewItemDialog mode={mode} />
+      <NewItemDialog
+        mode={mode}
+        showDialog={showDialog}
+        setShowDialog={showDialog}
+      />
     </div>
   );
 };
