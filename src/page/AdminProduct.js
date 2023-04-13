@@ -32,8 +32,6 @@ const AdminProduct = () => {
     "",
   ];
 
-  //에러있으면 메세지 보여주기
-
   //상품리스트 가져오기 (url쿼리 맞춰서)
 
   useEffect(() => {
