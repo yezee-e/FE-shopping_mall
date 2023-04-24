@@ -33,8 +33,6 @@ const PaymentPage = () => {
 
   //맨처음 페이지 로딩할때는 넘어가고  오더번호를 받으면 성공페이지로 넘어가기
 
-  //에러가있다면 보여주기
-
   const handleSubmit = (event) => {
     event.preventDefault();
     //오더 생성하가ㅣ
@@ -122,7 +120,7 @@ const PaymentPage = () => {
                   </Form.Group>
                 </Row>
                 <div className="mobile-receipt-area">
-                  <OrderReceipt />
+                  {/* <OrderReceipt /> */}
                 </div>
                 <div>
                   <h2 className="payment-title">결제 정보</h2>
@@ -140,7 +138,7 @@ const PaymentPage = () => {
           </div>
         </Col>
         <Col lg={5} className="receipt-area">
-          <OrderReceipt />
+          {/* <OrderReceipt /> */}
         </Col>
       </Row>
     </Container>
