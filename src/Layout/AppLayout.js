@@ -14,14 +14,10 @@ const AppLayout = ({ children }) => {
   const user = { level: "admin" }; // 로그인 기능 만들고 지우기
 
   // const { user } = useSelector((state) => state.user);
-  const { isFullyLoaded } = useSelector((state) => state.ui);
   useEffect(() => {
     dispatch(userActions.loginWithToken());
   }, []);
 
-  if (!isFullyLoaded) {
-    return null;
-  }
   return (
     <div>
       <ToastMessage />
